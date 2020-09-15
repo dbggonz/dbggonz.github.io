@@ -1,0 +1,38 @@
+
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Re-Verification Form</title>
+    <style>
+        body {font-family:sans-serif; padding:1em 2em;}
+        p {width:50em; clear:both;}
+/*        label {display:block; float:left; width:8em; margin:0 1.2em 1.2em 0;}*/
+        li {list-style-type:none;}
+        li label {width:auto; cursor:pointer;}</style>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="reverification_form.js"></script>
+</head>
+<body>
+        <h1>Reverification Form</h1>
+    
+    
+    <form action="/forms/content-qc-form/" method="post"
+        >
+        <input type='hidden' name='csrfmiddlewaretoken' value='SQU5onxBv9vSDGbdH6BNORxodZojCAWl' />
+
+        <p id="Producer_name"><label for="id_producer_name">Producer Name: </label><input class="charfield required" id="id_producer_name" maxlength="2000" name="producer_name" required="" type="text" /></p>
+
+<p id="Show_name"><label for="id_show_name">Show Name: </label><input class="charfield required" id="id_show_name" maxlength="2000" name="show_name" required="" type="text" /></p>
+
+<p id="Producer_type"><label for="id_producer_type_0">Producer Type:</label><ul id="id_producer_type"><li><label for="id_producer_type_0"><input class="choicefield required" id="id_producer_type_0" name="producer_type" required="" type="radio" value="Certified Access Producer" /> Certified Access Producer</label></li><li><label for="id_producer_type_1"><input class="choicefield required" id="id_producer_type_1" name="producer_type" required="" type="radio" value="Playback Producer" /> Playback Producer</label></li></ul></p>
+
+<p id="Proof_id"><label for="id_proof_of_id">Proof of ID: </label><input class="filefield required" id="id_proof_of_id" name="proof_of_id" required="" type="file" /></p>
+
+<p id="Proof_address"><label for="Proof_address">Proof of Address: </label><input class="filefield" id="id_proof_of_address" name="proof_of_address" type="file" />
+
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit">
+    </form>
+</body>

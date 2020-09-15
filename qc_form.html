@@ -1,0 +1,184 @@
+
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Content QC Form</title>
+    <style>
+        body {font-family:sans-serif; padding:1em 2em;}
+        p {width:50em; clear:both;}
+/*        label {display:block; float:left; width:8em; margin:0 1.2em 1.2em 0;}*/
+        li {list-style-type:none;}
+        li label {width:auto; cursor:pointer;}</style>
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="qc_form.js"></script>
+</head>
+<body>
+        <h1>Content QC Form</h1>
+    
+    
+    <form action="/forms/content-qc-form/" method="post"
+        >
+        <input type='hidden' name='csrfmiddlewaretoken' value='SQU5onxBv9vSDGbdH6BNORxodZojCAWl' />
+
+        <p id="Evaluator"><label for="id_mco_email">Evaluator:</label> <select class="choicefield required" id="id_mco_email" name="mco_email" required="">
+<option value="" selected="selected"></option>
+<option value="Aurelio Estevez">Aurelio Estevez</option>
+<option value="Bernardo Moronta">Bernardo Moronta</option>
+<option value="Dina Valentin">Dina Valentin</option>
+<option value="Michael Kaos">Michael Kaos</option>
+<option value="Paola Torres">Paola Torres</option>
+<option value="Rahman Sambo">Rahman Sambo</option>
+<option value="Thurmon Henry">Thurmon Henry</option>
+</select></p>
+
+<p id="Channel"><label for="id_which_channel_is_this_being_scheduled_for">Which channel is this being scheduled for?</label> <select class="choicefield required" id="id_which_channel_is_this_being_scheduled_for" name="which_channel_is_this_being_scheduled_for" required="">
+<option value="" selected="selected"></option>
+<option value="Channel 67/33">Channel 67/33</option>
+<option value="Channel 68/34">Channel 68/34</option>
+<option value="Channel 69/35">Channel 69/35</option>
+<option value="Channel 70/36">Channel 70/36</option>
+<option value="Channel 951/37">Channel 951/37</option>
+<option value="Channel 952/38">Channel 952/38</option>
+</select></p>
+
+<p id="Show_File_Name_Question"><label for="id_show_file_name">Show File Name:</label> <input class="charfield required" id="id_show_file_name" maxlength="2000" name="show_file_name" required="" type="text" /></p>
+
+<br />
+
+<h2>Section I - Technical Information</h2>
+
+<p id="File_specifications"><label for="id_does_the_file_meet_the_required_specifications_0">Does the file meet the required specifications?</label></p>
+<p><ul id="id_does_the_file_meet_the_required_specifications"><li><label for="id_does_the_file_meet_the_required_specifications_0"><input class="choicefield required" id="id_does_the_file_meet_the_required_specifications_0" name="does_the_file_meet_the_required_specifications" required="" type="radio" value="Yes" /> Yes</label></li>
+<li><label for="id_does_the_file_meet_the_required_specifications_1"><input class="choicefield required" id="id_does_the_file_meet_the_required_specifications_1" name="does_the_file_meet_the_required_specifications" required="" type="radio" value="No Show Cannot Be Scheduled" /> No even after file was dropped into TRMS transcode</label></li></ul></p>
+
+<textarea rows="20" cols="70" readonly> File Specifications:
+
+VIDEO CODEC:  H.264
+
+RESOLUTION: 1920x1080
+
+ASPECT RATIO: 16:9
+
+FRAMES PER SECOND: 29.97 (29.97fps)
+
+FRAME RATE: Constant 
+
+AUDIO FILE FORMAT: QuickTime Movie (AAC)
+
+AUDIO SAMPLING FREQUENCY: 48kHz
+
+FILE EXTENSION: .MOV or .MP4</textarea>
+
+<!-- <div id="hide_init" style="display: inline"> -->
+
+<div id="Program_scrubbed"><label for="id_has_this_program_been_scrubbed_0">Has this program been scrubbed?</label>
+
+<ul id="id_has_this_program_been_scrubbed"><li><label for="id_has_this_program_been_scrubbed_0"><input class="choicefield required" id="id_has_this_program_been_scrubbed_0" name="has_this_program_been_scrubbed" required="" type="radio" value="Yes" /> Yes</label></li>
+<li><label for="id_has_this_program_been_scrubbed_1"><input class="choicefield required" id="id_has_this_program_been_scrubbed_1" name="has_this_program_been_scrubbed" required="" type="radio" value="No" /> No</label></li></ul></div>
+<!-- only if DOES FILE MEET SPECIFICATIONS is YES -->
+
+
+<div id="Program_length"><label for="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_0">Is the program length the required 29:00 or 59:00 (or very close to it?):</label>
+
+    <ul id="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it"><li><label for="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_0"><input class="choicefield required" id="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_0" name="is_the_program_length_the_required_2900_or_5900_or_very_close_to_it" required="" type="radio" value="Yes" /> Yes</label></li>
+<li><label for="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_1"><input class="choicefield required" id="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_1" name="is_the_program_length_the_required_2900_or_5900_or_very_close_to_it" required="" type="radio" value="No Show Should Not Be Scheduled" /> No Show Should Not Be Scheduled</label></li>
+<li><label for="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_2"><input class="choicefield required" id="id_is_the_program_length_the_required_2900_or_5900_or_very_close_to_it_2" name="is_the_program_length_the_required_2900_or_5900_or_very_close_to_it" required="" type="radio" value="No but show is from CS and features live coverage type of content so it can be scheduled" /> No but show is from CS and features live coverage type of content so it can be scheduled</label></li></ul></div>
+<!-- only if DOES FILE MEET SPECIFICATIONS is YES -->
+
+
+<div id="Please_alert"><font color="#ff0000">PLEASE SCRUB THROUGH FILE AND ANSWER YES WHEN DONE</font></div>
+<!-- only if HAS THIS PROGRAM BEEN SCRUBBED is NO -->
+
+
+<div id="Letterboxed"><label for="id_is_this_file_0">Is this file 1920 x 1080 but does not fill the entire screen or are there graphics that are not full screen for more than 30 sec? Black bars on top and bottom only are ok</label> <ul id="id_is_this_file"><li><label for="id_is_this_file_0"><input class="choicefield required" id="id_is_this_file_0" name="is_this_file" required="" type="radio" value="Yes It cannot air" /> Yes it cannot air</label></li>
+<li><label for="id_is_this_file_1"><input class="choicefield required" id="id_is_this_file_1" name="is_this_file" required="" type="radio" value="No" /> No</label></li></ul></div>
+<!-- only if DOES FILE MEET SPECIFICATIONS is YES -->
+
+<div id="Title_safe_graphics"><label for="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe_0">Does this program contain graphics that are not 4 x 3 Title Safe?</label>
+    <ul id="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe"><li><label for="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe_0"><input class="choicefield required" id="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe_0" name="does_this_program_contain_graphics_that_are_not_4_by_3_title_safe" required="" type="radio" value="Yes It cannot air" /> Yes it cannot air</label></li>
+<li><label for="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe_1"><input class="choicefield required" id="id_does_this_program_contain_graphics_that_are_not_4_by_3_title_safe_1" name="does_this_program_contain_graphics_that_are_not_4_by_3_title_safe" required="" type="radio" value="No" /> No</label></li></ul></div>
+<!-- only if DOES FILE MEET SPECIFICATIONS is YES -->
+
+<div id="Producer_email_1"><textarea rows="10" cols="70" readonly id="Producer_email_one">Dear Producer,
+
+Unfortunately, we will not be able to air this file because it does not fill the entire 16:9 screen. If we were to broadcast this file, it would not appear full-screen on our live stream at BronxNet.tv. Please see the attached images(s) as an example of the issue. We ask that you kindly fix and re-submit. Please be advised that if you used a 4:3 SD camera, you must upgrade your camera to HD (1920x1080).</textarea></div>
+<br /><BR />
+<!-- only if IS THIS FILE 1920X1080 is YES IT CANNOT AIR-->
+
+<div id="Producer_email_2"><textarea rows="10" cols="70" readonly id="Producer_email_two">Dear Producer,
+
+Unfortunately, we will not be able to air this file because it contains graphics that are not 4:3 Title Safe. If we were to broadcast this file, your graphics would appear cut off on TV. Please see the attached image(s) as an example of the issue. We ask that you kindly edit the file by moving your graphics into the 4:3 Title Safe Zone. If you need further assistance, please click here: https://www.bronxnet.org/producers/43-title-safe-faq/. Here you will find tutorial videos on how to make your file 4:3 Title safe for broadcast on BronxNet, a downloadable 4:3 overlay image to import into any editing program, and a Frequently Asked Questions section. We apologize for any inconvenience and appreciate your understanding as we strive for the best possible quality for our viewers.</textarea></div>
+<!-- only if DOES FILE CONTAIN GRAPHICS THAT ARE NOT TITLE SAFE is YES IT CANNOT AIR-->
+
+<div id="Audio_Quality"><label for="id_are_the_audio_quality_levels_satisfactory_for_broadcast_0">Are the audio quality / levels satisfactory for broadcast?</label>
+    <ul id="id_are_the_audio_quality_levels_satisfactory_for_broadcast"><li><label for="id_are_the_audio_quality_levels_satisfactory_for_broadcast_0"><input class="choicefield required" id="id_are_the_audio_quality_levels_satisfactory_for_broadcast_0" name="are_the_audio_quality_levels_satisfactory_for_broadcast" required="" type="radio" value="Yes" /> Yes</label></li>
+<li><label for="id_are_the_audio_quality_levels_satisfactory_for_broadcast_1"><input class="choicefield required" id="id_are_the_audio_quality_levels_satisfactory_for_broadcast_1" name="are_the_audio_quality_levels_satisfactory_for_broadcast" required="" type="radio" value="No Show Should Not Be Scheduled" /> No Show Should Not Be Scheduled</label></li></ul></div>
+<!-- only if DOES THE FILE MEET SPECIFIC and HAS IT BEEN SCRUBBED is YES -->
+
+<div id="Video_Quality"><label for="id_is_the_video_quality_satisfactory_for_broadcast_0">Is the video quality satisfactory for broadcast?</label>
+    <ul id="id_is_the_video_quality_satisfactory_for_broadcast"><li><label for="id_is_the_video_quality_satisfactory_for_broadcast_0"><input class="choicefield required" id="id_is_the_video_quality_satisfactory_for_broadcast_0" name="is_the_video_quality_satisfactory_for_broadcast" required="" type="radio" value="Yes" /> Yes</label></li>
+<li><label for="id_is_the_video_quality_satisfactory_for_broadcast_1"><input class="choicefield required" id="id_is_the_video_quality_satisfactory_for_broadcast_1" name="is_the_video_quality_satisfactory_for_broadcast" required="" type="radio" value="No Show Should Not Be Scheduled" /> No Show Should Not Be Scheduled</label></li></ul></div>
+<!-- only if DOES FILE MEET SPECIFIC and HAS IT BEEN SCRUBBED is YES -->
+
+
+
+<div id="contentcheckcheckbox_one"><label for="id_please_confirm_course_of_action_to_correct_the_issue">Please confirm course of action to correct the issue.</label> <input class="booleanfield required" id="id_please_confirm_course_of_action_to_correct_the_issue" name="please_confirm_course_of_action_to_correct_the_issue" required="" type="checkbox" value="Called and emailed producer regarding the issue"/> Called and emailed producer regarding the issue</div>
+<!-- only if DOES FILE MEET SPECIFIC is NO, 
+    OR IS PROGRAM LENGTH THE REQUIRED is NO, 
+    OR HAS IT BEEN SCRUBBED is NO, 
+    OR IS THIS FILE 1920 is YES, 
+    OR ARE THE AUDIO/VIDEO  is NO, 
+    OR DOES IT CONTAIN GRAPHICS NOT 4:3 is YES -->
+
+<br /> <br /> <br />
+<div id="section_2"><h2>Section II - Content</h2>
+
+<div id ="content_review"><p><label for="id_does_this_program_have_any_of_the_following_content_issues_0">Does this program have any of the following content issues:</label></p>
+
+    <ul id="id_does_this_program_have_any_of_the_following_content_issues">
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_0"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_0" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="The on screen program name does not match the program name provided on the submission form" /> The on screen program name does not match the program name provided on the submission form</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_1"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_1" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="UNACCEPTABLE commercial material" /> UNACCEPTABLE commercial material</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_2"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_2" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Looks like an infomercial" /> Looks like an infomercial</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_3"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_3" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Contains products service trademarks or brand names other than acknowledgement of underwriting support" /> Contains products service trademarks or brand names other than acknowledgement of underwriting support</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_4"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_4" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Has content that appears to be in violation of trademark or copyright" /> Has content that appears to be in violation of trademark or copyright</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_5"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_5" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Contains political endorsements or advertising" /> Contains political endorsements or advertising</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_6"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_6" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Contains obscene behavior language or images. NOTE Do not check this off if the only issue is profanity and the show is scheduled to air 12am through 5am" /> Contains obscene behavior language or images. NOTE Do not check this off if the only issue is profanity and the show is scheduled to air 12am through 5am</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_7"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_7" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Promotes a lottery or gambling enterprise" /> Promotes a lottery or gambling enterprise</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_8"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_8" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Contains material that constitutes libel slander or invasion of privacy" /> Contains material that constitutes libel slander or invasion of privacy</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_9"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_9" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Contains material which can create an immediate danger to the public or have a reasonable probability of obstructing law enforcement" /> Contains material which can create an immediate danger to the public or have a reasonable probability of obstructing law enforcement</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_10"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_10" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Is hateful towards a group of people" /> Is hateful towards a group of people</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_11"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_11" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Has content issues in need of management review" /> Has content issues in need of management review</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_12"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_12" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="The producer is not identified at the end. This does not apply for CH67 content" /> The producer is not identified at the end. This does not apply for CH67 content</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_13"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_13" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="The show was produced with BronxNet equipment or facilities but does not have the following credit line: “Produced through the facilities of Bronx Community Cable Programming Corporation” (does not apply for playback producers)" /> The show was produced with BronxNet equipment or facilities but does not have the following credit line: “Produced through the facilities of Bronx Community Cable Programming Corporation” (does not apply for playback producers)</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_14"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_14" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Has content issues not listed here (please describe below)" /> Has content issues not listed here (please describe below)</label></li></p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_15"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_15" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="Show contains lower thirds or other graphics with incorrect spellings or grammar" /> Show contains lower thirds or other graphics with incorrect spellings or grammar</label></li>
+</p>
+<p><li><label for="id_does_this_program_have_any_of_the_following_content_issues_16"><input class="multiplechoicefield required" id="id_does_this_program_have_any_of_the_following_content_issues_16" name="does_this_program_have_any_of_the_following_content_issues" type="checkbox" value="No content issues found" /> No content issues found</label></li></ul></p></div>
+
+
+<!-- only if DOES THE FILE MEET SPECIFICS is YES, OR HAS THIS PROGRAM BEEN SCRUBBED is YES -->
+<br /><br /><br />
+<div id="checkbox_corner">
+<div id="checkbox_two"><p id="contentcheckcheckbox_two"><label for="id_please_confirm_course_of_action_to_correct_the_issue">Please confirm course of action to correct the issue:</label> <input class="booleanfield required" id="id_please_confirm_course_of_action_to_correct_the_issue" name="please_confirm_course_of_action_to_correct_the_issue" required="" type="checkbox" /> Moved file to Flagged Programs folder and notified Traffic Manager</p></div>
+<!-- only if DOES THIS PROGRAM LIST is HAS CONTENT IN NEED OF REVIEW -->
+
+
+<div id="checkbox_three"><p id="contentcheckcheckbox_three"><label for="id_please_confirm_course_of_action_to_correct_the_issue">Please confirm course of action to correct the issue:</label> <input class="booleanfield required" id="id_please_confirm_course_of_action_to_correct_the_issue" name="please_confirm_course_of_action_to_correct_the_issue" required="" type="checkbox" /> Called/emailed producer and made them aware of the new closing graphic (https://www.bronxnet.org/media/filer_public/20/36/203611a0-b53e-4e78-97f5-33794fe26703/bronxnetclosinggraphic.png)</p></div>
+<!-- only if DOES THIS PROGRAM LIST is THE SHOW WAS PRODUCED WITH BXNET EQUIP AND DOESNT HAVE CREDIT LINE -->
+
+
+<div id="checkbox_four"><p id="contentcheckcheckbox_four"><label for="id_please_confirm_course_of_action_to_correct_the_issue">Please confirm course of action to correct the issue:</label> <input class="booleanfield required" id="id_please_confirm_course_of_action_to_correct_the_issue" name="please_confirm_course_of_action_to_correct_the_issue" required="" type="checkbox" />  Called and emailed producer regarding the issue</p></div></div></div>
+<!-- only if DOES THIS PROGRAM LIST is any of the content, except HAS CONTENT ISSUES or NO CONTENT ISSUES -->
+
+<p id="Describe_issues_textarea"><label for="id_in_detail_please_describe_the_technical_or_content_issues">In detail please describe the technical or content issues (timecode of error, audio overmodulation, video isn't HD, etc...)</label> <textarea class="charfield required" cols="40" id="id_in_detail_please_describe_the_technical_or_content_issues" maxlength="2000" name="in_detail_please_describe_the_technical_or_content_issues" required="" rows="10">
+</textarea></p>
+
+
+
+
+        <div style="clear:left;">&nbsp;</div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
